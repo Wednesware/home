@@ -11,6 +11,137 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.top-menu {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+
+    padding: .6rem;
+    border-radius: 999px;
+
+    background: rgba(20,20,20,.65);
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    z-index: 1000;
+
+    transition:
+        background .4s ease,
+        transform .4s cubic-bezier(.2,1.5,.5,1);
+}
+
+
+.top-menu a {
+    position: relative;
+    overflow: hidden;
+
+    color: #aaa;
+    text-decoration: none;
+    font-weight: 600;
+
+    padding: .65rem 1.2rem;
+    border-radius: 999px;
+
+    background-size: 300% 300%;
+    
+    transition:
+        transform .3s cubic-bezier(.2,1.5,.5,1),
+        padding .3s ease,
+        color .3s ease,
+        background-position .8s ease;
+}
+
+
+/* Hover animation */
+.top-menu a:hover {
+    color: white;
+
+    transform:
+        scale(1.12);
+
+    padding-left: 1.7rem;
+    padding-right: 1.7rem;
+
+    color: #000;
+
+    background-position: 100% 50%;
+}
+
+.home-nav:hover {
+    background-color: #fff;
+}
+
+.nitrogen-nav:hover {
+    background-image: linear-gradient(
+        90deg,
+        #ff4d4d,
+        #ffb84d,
+        #ff4d9d
+    );
+    animation: gradientMove 5s ease infinite;
+}
+
+.magnesium-nav:hover {
+    background-image: linear-gradient(
+        90deg,
+        #4dd4ff,
+        #4dff88,
+        #7a4dff
+    );
+    animation: gradientMove 6.5s ease infinite;
+}
+
+.helium-nav:hover {
+    background-image: linear-gradient(
+        90deg,
+        #ffd54d,
+        #ff6fd8,
+        #4de1ff
+    );
+    animation: gradientMove 7.5s ease infinite;
+}
+
+.sodium-nav:hover {
+    background-image: linear-gradient(
+        90deg,
+        #00ff15,
+        #0d460b,
+        #0a8006
+    );
+    animation: gradientMove 7.5s ease infinite;
+}
+
+.lithium-nav:hover {
+    background-image: linear-gradient(
+        90deg,
+        #00e1ff,
+        #008cff,
+        #4de1ff
+    );
+    animation: gradientMove 7.5s ease infinite;
+}
+
+
+.top-menu a:hover::before {
+    opacity: .25;
+}
+
+
+.top-menu a:active {
+    transform: scale(.95);
+}
+
 body {
     background: #050505;
     color: #f5f5f5;
@@ -327,7 +458,7 @@ section {
     padding: 0.25em 0.75em;
     transform: translateY(-60px);
     background-size: 300% 300%;
-    /* <p class="unrel">CONCEPT</p> */
+    /* <p class="unrel">UNRELEASED</p> */
 }
 
 .black {
@@ -366,6 +497,14 @@ footer {
 
 <body>
 <div id="bgTint"></div>
+<nav class="top-menu">
+    <a class="home-nav" href="#wednesware">Home</a>
+    <a class="nitrogen-nav" href="#nitrogen">Nitrogen</a>
+    <a class="magnesium-nav" href="#magnesium">Magnesium</a>
+    <a class="helium-nav" href="#helium">Helium</a>
+    <a class="sodium-nav" href="#sodium">Sodium</a>
+    <a class="lithium-nav" href="#lithium">Lithium</a>
+</nav>
 <section id="wednesware">
     <div class="container">
         <div class="row">
@@ -504,7 +643,46 @@ footer {
             <i class="fa-solid fa-plug icon icon-sodium"></i>
             <h2 class="project-title sodium textbg">Sodium</h2>
         </div>
-        <p class="unrel">CONCEPT</p>
+        <p class="unrel">UNRELEASED</p>
+        <p class="project-desc">
+            Get official and community-made plug-ins and extensions to expand your publications.
+        </p>
+        <div class="buttons">
+            <a href="https://github.com/Wednesware/Sodium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="sodium textbg">sodium</span></code></pre>
+        <div class="divider"></div>
+        <div class="feature-row">
+            <i class="fa-solid fa-plug-circle-check feature-icon icon-sodium"></i>
+            <h2 class="feature-title sodium textbg">PlugDep & UniDep</h2>
+            <p class="feature-desc">
+                Easily install necessary plug-ins with <code class="code code-il cc"><span class="sodium textbg"><b>na</b></span> getdep</code>, or <code class="code code-il cc"><span class="sodium textbg"><b>na</b></span> uniget</code> to install <span class="nitrogen textbg">Nitrogen</span> dependencies as well with one command.
+            </p>
+        </div>
+        <div class="feature-row">
+            <i class="fa-solid fa-code-fork feature-icon icon-sodium"></i>
+            <h2 class="feature-title sodium textbg">Based on Nitrogen</h2>
+            <p class="feature-desc">
+                Uses the same syntax, smart features and tricks as <span class="nitrogen textbg">Nitrogen</span>. New <span class="nitrogen textbg">Nitrogen</span> releases are shortly mirrored in <span class="sodium textbg">Sodium</span>.
+            </p>
+        </div>
+        <div class="feature-row">
+            <i class="fa-solid fa-file-shield feature-icon icon-sodium"></i>
+            <h2 class="feature-title sodium textbg">Malware-free guarantee</h2>
+            <p class="feature-desc">
+                Plug-ins are checked for slow or unsafe code before every release and update.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section data-color="sodium" id="sodium">
+    <div class="container">
+        <div class="row">
+            <i class="fa-solid fa-plug icon icon-sodium"></i>
+            <h2 class="project-title sodium textbg">Sodium</h2>
+        </div>
+        <p class="unrel">UNRELEASED</p>
         <p class="project-desc">
             Get official and community-made plug-ins and extensions to expand your publications.
         </p>
