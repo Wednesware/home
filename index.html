@@ -26,7 +26,7 @@ html {
     justify-content: center;
     gap: .6rem;
 
-    padding: .6rem;
+    padding: 0.6rem;
     border-radius: 999px;
 
     background: rgba(20,20,20,.65);
@@ -40,7 +40,6 @@ html {
         background .4s ease,
         transform .4s cubic-bezier(.2,1.5,.5,1);
 }
-
 
 .top-menu a {
     position: relative;
@@ -78,7 +77,7 @@ html {
     background-position: 100% 50%;
 }
 
-.home-nav:hover {
+.wednesware-nav:hover {
     background-color: #fff;
 }
 
@@ -108,6 +107,16 @@ html {
         #ffd54d,
         #ff6fd8,
         #4de1ff
+    );
+    animation: gradientMove 7.5s ease infinite;
+}
+
+.krypton-nav:hover {
+    background-image: linear-gradient(
+        90deg,
+        #ff0000,
+        #bd3838,
+        #ee6f6f
     );
     animation: gradientMove 7.5s ease infinite;
 }
@@ -276,16 +285,12 @@ section {
 
 }
 
-.rainbow {
+.krypton {
     background-image: linear-gradient(
         90deg,
         #ff0000,
-        #ff7f00,
-        #ffff00,
-        #00ff00,
-        #00ffff,
-        #0000ff,
-        #8b00ff
+        #bd3838,
+        #ee6f6f
     );
     animation: gradientMove 6s ease infinite;
     animation-duration: 7.5s;
@@ -301,6 +306,22 @@ section {
     );
     animation: gradientMove 6s ease infinite;
     animation-duration: 7.5s;
+}
+
+.rainbow {
+    background-image: linear-gradient(
+        90deg,
+        #ff0000,
+        #ff7f00,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #8b00ff
+    );
+    animation: gradientMove 6s ease infinite;
+    animation-duration: 7.5s;
+
 }
 
 .project-desc {
@@ -333,9 +354,22 @@ section {
     margin-bottom: 15px;
 }
 
+.btn-discord {
+    background: #5865F2;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.btn-pypi {
+    background: #006D77;
+    color: white;
+    margin-bottom: 15px;
+}
+
 .btn-secondary {
     border: 1px solid #333;
     color: white;
+    margin-bottom: 15px;
 }
 
 .icon {
@@ -393,6 +427,11 @@ section {
 
 .icon-sodium {
     background-image: linear-gradient(90deg, #00ff15, #0d460b, #0a8006);
+    animation-duration: 7.5s;
+}
+
+.icon-krypton {
+    background-image: linear-gradient(90deg, #ff0000, #bd3838, #ee6f6f);
     animation-duration: 7.5s;
 }
 
@@ -498,13 +537,15 @@ footer {
 <body>
 <div id="bgTint"></div>
 <nav class="top-menu">
-    <a class="home-nav" href="#wednesware">Home</a>
+    <a class="wednesware-nav" href="#wednesware">Wednesware</a>
     <a class="nitrogen-nav" href="#nitrogen">Nitrogen</a>
     <a class="magnesium-nav" href="#magnesium">Magnesium</a>
     <a class="helium-nav" href="#helium">Helium</a>
     <a class="sodium-nav" href="#sodium">Sodium</a>
+    <a class="krypton-nav" href="#krypton">Krypton</a>
     <a class="lithium-nav" href="#lithium">Lithium</a>
 </nav>
+</div>
 <section id="wednesware">
     <div class="container">
         <div class="row">
@@ -513,6 +554,12 @@ footer {
         </div>
         <div class="divider"></div>
         <p class="subtitle">Ever-growing open-source ecosystem.</p>
+        <div class="buttons">
+            <a href="https://github.com/Wednesware" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://discord.gg/phc3RDSjsr" class="btn btn-discord" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+            <a href="https://pypi.org/user/wednesware/" class="btn btn-pypi" target="_blank"><i class="fa-brands fa-python"></i> PyPI</a>
+            <a href="mailto:wednesware@gmail.com" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-envelope"></i> Contact us</a>
+        </div>
         <a href="#nitrogen"><p class="scroll-text">Scroll down to see what we make</p><i class="fa-solid fa-angle-down down-arrow"></i></a>
     </div>
 </section>
@@ -530,6 +577,7 @@ footer {
 
         <div class="buttons">
             <a href="https://github.com/Wednesware/Nitrogen" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://pypi.org/project/wwn/" class="btn btn-pypi" target="_blank"><i class="fa-brands fa-python"></i> PyPI</a>
         </div>
         <pre><code class="code cc"><span class="yellow"><b>pipx</b></span> install <span class="nitrogen textbg">wwn</span></code></pre>
         <div class="divider"></div>
@@ -544,14 +592,14 @@ footer {
             <i class="fa-solid fa-gauge-high feature-icon icon-nitrogen"></i>
             <h2 class="feature-title nitrogen textbg">Blazing fast!</h2>
             <p class="feature-desc">
-                Standard installations average 0.35 seconds.
+                Standard installations average 0.25 seconds.
             </p>
         </div>
         <div class="feature-row">
             <i class="fa-solid fa-file-circle-check feature-icon icon-nitrogen"></i>
             <h2 class="feature-title nitrogen textbg">Officially supported</h2>
             <p class="feature-desc">
-                Publications always up to date and verified.
+                Publications are always up to date and verified.
             </p>
         </div>
     </div>
@@ -643,9 +691,8 @@ footer {
             <i class="fa-solid fa-plug icon icon-sodium"></i>
             <h2 class="project-title sodium textbg">Sodium</h2>
         </div>
-        <p class="unrel">UNRELEASED</p>
         <p class="project-desc">
-            Get official and community-made plug-ins and extensions to expand your publications.
+            Get official and community-made plugins and extensions to expand your publications.
         </p>
         <div class="buttons">
             <a href="https://github.com/Wednesware/Sodium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
@@ -654,62 +701,61 @@ footer {
         <div class="divider"></div>
         <div class="feature-row">
             <i class="fa-solid fa-plug-circle-check feature-icon icon-sodium"></i>
-            <h2 class="feature-title sodium textbg">PlugDep & UniDep</h2>
+            <h2 class="feature-title sodium textbg">PluginDep</h2>
             <p class="feature-desc">
-                Easily install necessary plug-ins with <code class="code code-il cc"><span class="sodium textbg"><b>na</b></span> getdep</code>, or <code class="code code-il cc"><span class="sodium textbg"><b>na</b></span> uniget</code> to install <span class="nitrogen textbg">Nitrogen</span> dependencies as well with one command.
+                Easily install necessary plugins.
             </p>
         </div>
         <div class="feature-row">
             <i class="fa-solid fa-code-fork feature-icon icon-sodium"></i>
             <h2 class="feature-title sodium textbg">Based on Nitrogen</h2>
             <p class="feature-desc">
-                Uses the same syntax, smart features and tricks as <span class="nitrogen textbg">Nitrogen</span>. New <span class="nitrogen textbg">Nitrogen</span> releases are shortly mirrored in <span class="sodium textbg">Sodium</span>.
+                <span class="nitrogen textbg">Nitrogen</span>'s syntax, smart features and tricks will also work in <span class="sodium textbg">Sodium</span>.
             </p>
         </div>
         <div class="feature-row">
-            <i class="fa-solid fa-file-shield feature-icon icon-sodium"></i>
+            <i class="fa-solid fa-virus-covid-slash feature-icon icon-sodium"></i>
             <h2 class="feature-title sodium textbg">Malware-free guarantee</h2>
             <p class="feature-desc">
-                Plug-ins are checked for slow or unsafe code before every release and update.
+                Plugins are checked for slow or unsafe code before every release and update.
             </p>
         </div>
     </div>
 </section>
 
-<section data-color="sodium" id="sodium">
+<section data-color="krypton" id="krypton">
     <div class="container">
         <div class="row">
-            <i class="fa-solid fa-plug icon icon-sodium"></i>
-            <h2 class="project-title sodium textbg">Sodium</h2>
+            <i class="fa-solid fa-file-shield icon icon-krypton"></i>
+            <h2 class="project-title krypton textbg">Krypton</h2>
         </div>
-        <p class="unrel">UNRELEASED</p>
         <p class="project-desc">
-            Get official and community-made plug-ins and extensions to expand your publications.
+            Encrypt, encode, and compress files using methods such as XOR, Base64 encoding, and Zstandard compression.
         </p>
         <div class="buttons">
-            <a href="https://github.com/Wednesware/Sodium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://github.com/Wednesware/Krypton" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
         </div>
-        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="sodium textbg">sodium</span></code></pre>
+        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="krypton textbg">krypton</span></code></pre>
         <div class="divider"></div>
         <div class="feature-row">
-            <i class="fa-solid fa-plug-circle-check feature-icon icon-sodium"></i>
-            <h2 class="feature-title sodium textbg">PlugDep & UniDep</h2>
+            <i class="fa-solid fa-floppy-disk feature-icon icon-krypton"></i>
+            <h2 class="feature-title krypton textbg">Save files</h2>
             <p class="feature-desc">
-                Easily install necessary plug-ins with <code class="code code-il cc"><span class="sodium textbg"><b>na</b></span> getdep</code>, or <code class="code code-il cc"><span class="sodium textbg"><b>na</b></span> uniget</code> to install <span class="nitrogen textbg">Nitrogen</span> dependencies as well with one command.
+                Built-in support to save and load to and from compressed files.
             </p>
         </div>
         <div class="feature-row">
-            <i class="fa-solid fa-code-fork feature-icon icon-sodium"></i>
-            <h2 class="feature-title sodium textbg">Based on Nitrogen</h2>
+            <i class="fa-solid fa-code feature-icon icon-krypton"></i>
+            <h2 class="feature-title krypton textbg">Easy syntax</h2>
             <p class="feature-desc">
-                Uses the same syntax, smart features and tricks as <span class="nitrogen textbg">Nitrogen</span>. New <span class="nitrogen textbg">Nitrogen</span> releases are shortly mirrored in <span class="sodium textbg">Sodium</span>.
+                Write scripts with <span class="krypton textbg">Krypton</span> quickly and efficiently.
             </p>
         </div>
         <div class="feature-row">
-            <i class="fa-solid fa-file-shield feature-icon icon-sodium"></i>
-            <h2 class="feature-title sodium textbg">Malware-free guarantee</h2>
+            <i class="fa-solid fa-memory feature-icon icon-krypton"></i>
+            <h2 class="feature-title krypton textbg">Rapid operations</h2>
             <p class="feature-desc">
-                Plug-ins are checked for slow or unsafe code before every release and update.
+                Operations performed swiftly and elegantly.
             </p>
         </div>
     </div>
@@ -765,6 +811,7 @@ const colors = {
     magnesium: [41, 207, 255],
     helium: [255, 122, 217],
     sodium: [0, 201, 26],
+    krypton: [255, 0, 0],
     lithium: [0, 184, 255]
 };
 
