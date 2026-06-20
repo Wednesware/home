@@ -297,6 +297,18 @@ section {
 
 }
 
+.oxygen {
+    background-image: linear-gradient(
+        90deg,
+        #d5ee64,
+        #008cff,
+        #4de1ff
+    );
+    animation: gradientMove 6s ease infinite;
+    animation-duration: 7.5s;
+
+}
+
 .lithium {
     background-image: linear-gradient(
         90deg,
@@ -429,14 +441,18 @@ section {
     background-image: linear-gradient(90deg, #00ff15, #0d460b, #0a8006);
     animation-duration: 7.5s;
 }
-
 .icon-krypton {
     background-image: linear-gradient(90deg, #ff0000, #bd3838, #ee6f6f);
     animation-duration: 7.5s;
 }
 
+.icon-oxygen {
+    background-image: linear-gradient(90deg, #d5ee64, #ff0095, #ca46b4);
+    animation-duration: 7.5s;
+}
+
 .icon-lithium {
-    background-image: linear-gradient(90deg, #00e1ff, #008cff, #4de1ff);
+    background-image: linear-gradient(90deg, #f1fa72, #008cff, #4de1ff);
     animation-duration: 7.5s;
 }
 
@@ -761,6 +777,44 @@ footer {
     </div>
 </section>
 
+<section data-color="oxygen" id="oxygen">
+    <div class="container">
+        <div class="row">
+            <i class="fa-regular fa-window-maximize icon icon-oxygen"></i>
+            <h2 class="project-title oxygen textbg">Oxygen</h2>
+        </div>
+        <p class="project-desc">
+            GUI-based admin console for debugging and testing while your code runs.
+        </p>
+        <div class="buttons">
+            <a href="https://github.com/Wednesware/Oxygen" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="oxygen textbg">oxygen</span></code></pre>
+        <div class="divider"></div>
+        <div class="feature-row">
+            <i class="fa-solid fa-feather-pointed feature-icon icon-oxygen"></i>
+            <h2 class="feature-title oxygen textbg">Tkinter-based</h2>
+            <p class="feature-desc">
+                Fast, cross-platform control panel.
+            </p>
+        </div>
+        <div class="feature-row">
+            <i class="fa-solid fa-bars-progress feature-icon icon-oxygen"></i>
+            <h2 class="feature-title oxygen textbg">Versatile tooling</h2>
+            <p class="feature-desc">
+                Perfect for quick debug checks and long runtime scans.
+            </p>
+        </div>
+        <div class="feature-row">
+            <i class="fa-solid fa-wand-sparkles feature-icon icon-oxygen"></i>
+            <h2 class="feature-title oxygen textbg">Squeaky clean!</h2>
+            <p class="feature-desc">
+                No ads, distractions or useless features. Built for speed and performance.
+            </p>
+        </div>
+    </div>
+</section>
+
 <section data-color="lithium" id="lithium">
     <div class="container">
         <div class="row">
@@ -812,6 +866,7 @@ const colors = {
     helium: [255, 122, 217],
     sodium: [0, 201, 26],
     krypton: [255, 0, 0],
+    oxygen: [255, 120, 255],
     lithium: [0, 184, 255]
 };
 
