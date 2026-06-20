@@ -111,6 +111,16 @@ html {
     animation: gradientMove 7.5s ease infinite;
 }
 
+.sodium-nav:hover {
+    background-image: linear-gradient(
+        90deg,
+        #00ff15,
+        #0d460b,
+        #0a8006
+    );
+    animation: gradientMove 7.5s ease infinite;
+}
+
 .krypton-nav:hover {
     background-image: linear-gradient(
         90deg,
@@ -121,12 +131,12 @@ html {
     animation: gradientMove 7.5s ease infinite;
 }
 
-.sodium-nav:hover {
+.oxygen-nav:hover {
     background-image: linear-gradient(
         90deg,
-        #00ff15,
-        #0d460b,
-        #0a8006
+        #886926,
+        #008cff,
+        #f83232
     );
     animation: gradientMove 7.5s ease infinite;
 }
@@ -300,9 +310,9 @@ section {
 .oxygen {
     background-image: linear-gradient(
         90deg,
-        #d5ee64,
+        #886926,
         #008cff,
-        #4de1ff
+        #f83232
     );
     animation: gradientMove 6s ease infinite;
     animation-duration: 7.5s;
@@ -341,6 +351,7 @@ section {
     color: #777;
     line-height: 1.7;
     margin-top: 1.5rem;
+    text-align: center;
 }
 
 .buttons {
@@ -422,40 +433,6 @@ section {
     transform: translateY(-20px);
 }
 
-.icon-nitrogen {
-    background-image: linear-gradient(90deg, #ff4d4d, #ffb84d, #ff4d9d);
-    animation-duration: 5s;
-}
-
-.icon-magnesium {
-    background-image: linear-gradient(90deg, #4dd4ff, #4dff88, #7a4dff);
-    animation-duration: 6.5s;
-}
-
-.icon-helium {
-    background-image: linear-gradient(90deg, #ffd54d, #ff6fd8, #4de1ff);
-    animation-duration: 7.5s;
-}
-
-.icon-sodium {
-    background-image: linear-gradient(90deg, #00ff15, #0d460b, #0a8006);
-    animation-duration: 7.5s;
-}
-.icon-krypton {
-    background-image: linear-gradient(90deg, #ff0000, #bd3838, #ee6f6f);
-    animation-duration: 7.5s;
-}
-
-.icon-oxygen {
-    background-image: linear-gradient(90deg, #d5ee64, #ff0095, #ca46b4);
-    animation-duration: 7.5s;
-}
-
-.icon-lithium {
-    background-image: linear-gradient(90deg, #f1fa72, #008cff, #4de1ff);
-    animation-duration: 7.5s;
-}
-
 .down-arrow {
     color: #aaa;
     font-size: 3em;
@@ -484,6 +461,7 @@ section {
 
 .info {
     font-size: 2em;
+    text-align: center;
 }
 
 .cc {
@@ -520,6 +498,23 @@ section {
     color: #000;
 }
 
+.cte-prompt {
+    color: #777;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+    transition: opacity .3s ease;
+}
+
+details[open] .cte-prompt {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+
 @keyframes fadeOut {
     0% {
         opacity: 1;
@@ -542,6 +537,39 @@ section {
     background: #050505;
 }
 
+details {
+    width: 100%;
+    align-items: center;
+}
+
+details .container {
+    overflow: hidden;
+}
+
+details:not([open]) .container {
+    display: none;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: none;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
 footer {
     text-align: center;
     color: #555;
@@ -559,6 +587,7 @@ footer {
     <a class="helium-nav" href="#helium">Helium</a>
     <a class="sodium-nav" href="#sodium">Sodium</a>
     <a class="krypton-nav" href="#krypton">Krypton</a>
+    <a class="oxygen-nav" href="#oxygen">Oxygen</a>
     <a class="lithium-nav" href="#lithium">Lithium</a>
 </nav>
 </div>
@@ -581,276 +610,357 @@ footer {
 </section>
 
 <section data-color="nitrogen" id="nitrogen">
-    <div class="container">
-        <div class="row">
-            <i class="fa-solid fa-download icon icon-nitrogen"></i>
-            <h2 class="project-title nitrogen textbg">Nitrogen</h2>
-        </div>
-        <h3 class="info">aka <span class="red"><b>n2</b></span>, <span class="red"><b>wwn</b></span></h2>
-        <p class="project-desc">
-            Easy, ultra-lightweight installer for Wednesware publications.
-        </p>
+    <details>
+        <summary>
+            <div class="row">
+                <i class="fa-solid fa-download icon nitrogen"></i>
+                <h2 class="project-title nitrogen textbg">Nitrogen</h2>
+            </div>
+            <h3 class="feature-desc info">aka <span class="nitrogen textbg"><b>n2</b></span>, <span class="nitrogen textbg"><b>wwn</b></span></h3>
+            <p class="project-desc">
+                Easy, ultra-lightweight installer for Wednesware publications.
+            </p>
+            <p class="cte-prompt">
+                Click to expand
+            </p>
+        </summary>
+        <div class="container">
 
-        <div class="buttons">
-            <a href="https://github.com/Wednesware/Nitrogen" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://pypi.org/project/wwn/" class="btn btn-pypi" target="_blank"><i class="fa-brands fa-python"></i> PyPI</a>
+            <div class="buttons">
+                <a href="https://github.com/Wednesware/Nitrogen" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://pypi.org/project/wwn/" class="btn btn-pypi" target="_blank"><i class="fa-brands fa-python"></i> PyPI</a>
+            </div>
+            <pre><code class="code cc"><span class="yellow"><b>pipx</b></span> install <span class="nitrogen textbg">wwn</span></code></pre>
+            <div class="divider"></div>
+            <div class="feature-row">
+                <i class="fa-solid fa-cube feature-icon nitrogen"></i>
+                <h2 class="feature-title nitrogen textbg">NitroDep</h2>
+                <p class="feature-desc">
+                    Smart installation of dependencies on supported software.
+                </p>
+            </div>
+            <div class="feature-row">
+                <i class="fa-solid fa-gauge-high feature-icon nitrogen"></i>
+                <h2 class="feature-title nitrogen textbg">Blazing fast!</h2>
+                <p class="feature-desc">
+                    Standard installations average 0.25 seconds.
+                </p>
+            </div>
+            <div class="feature-row">
+                <i class="fa-solid fa-file-circle-check feature-icon nitrogen"></i>
+                <h2 class="feature-title nitrogen textbg">Officially supported</h2>
+                <p class="feature-desc">
+                    Publications are always up to date and verified.
+                </p>
+            </div>
         </div>
-        <pre><code class="code cc"><span class="yellow"><b>pipx</b></span> install <span class="nitrogen textbg">wwn</span></code></pre>
-        <div class="divider"></div>
-        <div class="feature-row">
-            <i class="fa-solid fa-cube feature-icon icon-nitrogen"></i>
-            <h2 class="feature-title nitrogen textbg">NitroDep</h2>
-            <p class="feature-desc">
-                Smart installation of dependencies on supported software.
-            </p>
-        </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-gauge-high feature-icon icon-nitrogen"></i>
-            <h2 class="feature-title nitrogen textbg">Blazing fast!</h2>
-            <p class="feature-desc">
-                Standard installations average 0.25 seconds.
-            </p>
-        </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-file-circle-check feature-icon icon-nitrogen"></i>
-            <h2 class="feature-title nitrogen textbg">Officially supported</h2>
-            <p class="feature-desc">
-                Publications are always up to date and verified.
-            </p>
-        </div>
-    </div>
+    </details>
 </section>
 
 <section data-color="magnesium" id="magnesium">
-    <div class="container">
-        <div class="row">
-            <i class="fa-solid fa-microchip icon icon-magnesium"></i>
-            <h2 class="project-title magnesium textbg">Magnesium</h2>
-        </div>
-        <p class="project-desc">
-            Shared library for all Wednesware publications.
-        </p>
-
-        <div class="buttons">
-            <a href="https://github.com/Wednesware/Magnesium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
-        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="magnesium textbg">magnesium</span></code></pre>
-        <div class="divider"></div>
-        <div class="feature-row">
-            <i class="fa-solid fa-terminal feature-icon icon-magnesium"></i>
-            <h2 class="feature-title magnesium textbg">Logging & Color</h2>
-            <p class="feature-desc">
-                Beautiful terminal output with formatted logging, sublogging, 140+ CSS-inspired colors, and RGB support.
+    <details>
+        <summary>
+            <div class="row">
+                <i class="fa-solid fa-microchip icon magnesium"></i>
+                <h2 class="project-title magnesium textbg">Magnesium</h2>
+            </div>
+            <p class="project-desc">
+                Shared library for all Wednesware publications.
             </p>
-        </div>
-
-        <div class="feature-row">
-            <i class="fa-solid fa-gear feature-icon icon-magnesium"></i>
-            <h2 class="feature-title magnesium textbg">Handle & Config</h2>
-            <p class="feature-desc">
-                Simplify application setup with PYON-based configuration and automatic exception handling through decorators.
+            <p class="cte-prompt">
+                Click to expand
             </p>
-        </div>
+        </summary>
 
-        <div class="feature-row">
-            <i class="fa-solid fa-cubes feature-icon icon-magnesium"></i>
-            <h2 class="feature-title magnesium textbg">Lists & Groups</h2>
-            <p class="feature-desc">
-                Powerful collection tools for organising objects, navigating multidimensional data, and managing complex structures.
-            </p>
+        <div class="container">
+            <div class="buttons">
+                <a href="https://github.com/Wednesware/Magnesium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+
+            <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="magnesium textbg">magnesium</span></code></pre>
+
+            <div class="divider"></div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-terminal feature-icon magnesium"></i>
+                <h2 class="feature-title magnesium textbg">Logging & Color</h2>
+                <p class="feature-desc">
+                    Beautiful terminal output with formatted logging, sublogging, 140+ CSS-inspired colors, and RGB support.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-gear feature-icon magnesium"></i>
+                <h2 class="feature-title magnesium textbg">Handle & Config</h2>
+                <p class="feature-desc">
+                    Simplify application setup with PYON-based configuration and automatic exception handling through decorators.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-cubes feature-icon magnesium"></i>
+                <h2 class="feature-title magnesium textbg">Lists & Groups</h2>
+                <p class="feature-desc">
+                    Powerful collection tools for organising objects, navigating multidimensional data, and managing complex structures.
+                </p>
+            </div>
         </div>
-    </div>
+    </details>
 </section>
 
 <section data-color="helium" id="helium">
-    <div class="container">
-        <div class="row">
-            <i class="fa-solid fa-diagram-project icon icon-helium"></i>
-            <h2 class="project-title helium textbg">Helium</h2>
-        </div>
-        <p class="project-desc">
-            Game and project creation library.
-        </p>
+    <details>
+        <summary>
+            <div class="row">
+                <i class="fa-solid fa-diagram-project icon helium"></i>
+                <h2 class="project-title helium textbg">Helium</h2>
+            </div>
+            <p class="project-desc">
+                Game and project creation library.
+            </p>
+            <p class="cte-prompt">
+                Click to expand
+            </p>
+        </summary>
 
-        <div class="buttons">
-            <a href="https://github.com/Wednesware/Helium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <div class="container">
+            <div class="buttons">
+                <a href="https://github.com/Wednesware/Helium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+
+            <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="helium textbg">helium</span></code></pre>
+
+            <div class="divider"></div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-circle-nodes feature-icon helium"></i>
+                <h2 class="feature-title helium textbg">Projects</h2>
+                <p class="feature-desc">
+                    Create and manage modular projects with zero boilerplate.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-scroll feature-icon helium"></i>
+                <h2 class="feature-title helium textbg">Scripts</h2>
+                <p class="feature-desc">
+                    Organize project logic into dynamically loaded scripts.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-cubes-stacked feature-icon helium"></i>
+                <h2 class="feature-title helium textbg">Resources</h2>
+                <p class="feature-desc">
+                    Store reusable classes and components as project resources.
+                </p>
+            </div>
         </div>
-        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="helium textbg">helium</span></code></pre>
-        <div class="divider"></div>
-        <div class="feature-row">
-            <i class="fa-solid fa-circle-nodes feature-icon icon-helium"></i>
-            <h2 class="feature-title helium textbg">Projects</h2>
-            <p class="feature-desc">
-                Create and manage modular projects with zero boilerplate.
-            </p>
-        </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-scroll feature-icon icon-helium"></i>
-            <h2 class="feature-title helium textbg">Scripts</h2>
-            <p class="feature-desc">
-                Organize project logic into dynamically loaded scripts.
-            </p>
-        </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-cubes-stacked feature-icon icon-helium"></i>
-            <h2 class="feature-title helium textbg">Resources</h2>
-            <p class="feature-desc">
-                Store reusable classes and components as project resources.
-            </p>
-        </div>
-    </div>
+    </details>
 </section>
 
 <section data-color="sodium" id="sodium">
-    <div class="container">
-        <div class="row">
-            <i class="fa-solid fa-plug icon icon-sodium"></i>
-            <h2 class="project-title sodium textbg">Sodium</h2>
-        </div>
-        <p class="project-desc">
-            Get official and community-made plugins and extensions to expand your publications.
-        </p>
-        <div class="buttons">
-            <a href="https://github.com/Wednesware/Sodium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
-        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="sodium textbg">sodium</span></code></pre>
-        <div class="divider"></div>
-        <div class="feature-row">
-            <i class="fa-solid fa-plug-circle-check feature-icon icon-sodium"></i>
-            <h2 class="feature-title sodium textbg">PluginDep</h2>
-            <p class="feature-desc">
-                Easily install necessary plugins.
+    <details>
+        <summary>
+            <div class="row">
+                <i class="fa-solid fa-plug icon sodium"></i>
+                <h2 class="project-title sodium textbg">Sodium</h2>
+            </div>
+            <p class="project-desc">
+                Get official and community-made plugins and extensions to expand your publications.
             </p>
-        </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-code-fork feature-icon icon-sodium"></i>
-            <h2 class="feature-title sodium textbg">Based on Nitrogen</h2>
-            <p class="feature-desc">
-                <span class="nitrogen textbg">Nitrogen</span>'s syntax, smart features and tricks will also work in <span class="sodium textbg">Sodium</span>.
+            <p class="cte-prompt">
+                Click to expand
             </p>
+        </summary>
+
+        <div class="container">
+            <div class="buttons">
+                <a href="https://github.com/Wednesware/Sodium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+
+            <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="sodium textbg">sodium</span></code></pre>
+
+            <div class="divider"></div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-plug-circle-check feature-icon sodium"></i>
+                <h2 class="feature-title sodium textbg">PluginDep</h2>
+                <p class="feature-desc">
+                    Easily install necessary plugins.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-code-fork feature-icon sodium"></i>
+                <h2 class="feature-title sodium textbg">Based on Nitrogen</h2>
+                <p class="feature-desc">
+                    <span class="nitrogen textbg">Nitrogen</span>'s syntax, smart features and tricks will also work in <span class="sodium textbg">Sodium</span>.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-virus-covid-slash feature-icon sodium"></i>
+                <h2 class="feature-title sodium textbg">Malware-free guarantee</h2>
+                <p class="feature-desc">
+                    Plugins are checked for slow or unsafe code before every release and update.
+                </p>
+            </div>
         </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-virus-covid-slash feature-icon icon-sodium"></i>
-            <h2 class="feature-title sodium textbg">Malware-free guarantee</h2>
-            <p class="feature-desc">
-                Plugins are checked for slow or unsafe code before every release and update.
-            </p>
-        </div>
-    </div>
+    </details>
 </section>
 
 <section data-color="krypton" id="krypton">
-    <div class="container">
-        <div class="row">
-            <i class="fa-solid fa-file-shield icon icon-krypton"></i>
-            <h2 class="project-title krypton textbg">Krypton</h2>
-        </div>
-        <p class="project-desc">
-            Encrypt, encode, and compress files using methods such as XOR, Base64 encoding, and Zstandard compression.
-        </p>
-        <div class="buttons">
-            <a href="https://github.com/Wednesware/Krypton" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
-        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="krypton textbg">krypton</span></code></pre>
-        <div class="divider"></div>
-        <div class="feature-row">
-            <i class="fa-solid fa-floppy-disk feature-icon icon-krypton"></i>
-            <h2 class="feature-title krypton textbg">Save files</h2>
-            <p class="feature-desc">
-                Built-in support to save and load to and from compressed files.
+    <details>
+        <summary>
+            <div class="row">
+                <i class="fa-solid fa-file-shield icon krypton"></i>
+                <h2 class="project-title krypton textbg">Krypton</h2>
+            </div>
+            <p class="project-desc">
+                Encrypt, encode, and compress files using methods such as XOR, Base64 encoding, and Zstandard compression.
             </p>
-        </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-code feature-icon icon-krypton"></i>
-            <h2 class="feature-title krypton textbg">Easy syntax</h2>
-            <p class="feature-desc">
-                Write scripts with <span class="krypton textbg">Krypton</span> quickly and efficiently.
+            <p class="cte-prompt">
+                Click to expand
             </p>
+        </summary>
+
+        <div class="container">
+            <div class="buttons">
+                <a href="https://github.com/Wednesware/Krypton" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+
+            <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="krypton textbg">krypton</span></code></pre>
+
+            <div class="divider"></div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-floppy-disk feature-icon krypton"></i>
+                <h2 class="feature-title krypton textbg">Save files</h2>
+                <p class="feature-desc">
+                    Built-in support to save and load to and from compressed files.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-code feature-icon krypton"></i>
+                <h2 class="feature-title krypton textbg">Easy syntax</h2>
+                <p class="feature-desc">
+                    Write scripts with <span class="krypton textbg">Krypton</span> quickly and efficiently.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-memory feature-icon krypton"></i>
+                <h2 class="feature-title krypton textbg">Rapid operations</h2>
+                <p class="feature-desc">
+                    Operations performed swiftly and elegantly.
+                </p>
+            </div>
         </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-memory feature-icon icon-krypton"></i>
-            <h2 class="feature-title krypton textbg">Rapid operations</h2>
-            <p class="feature-desc">
-                Operations performed swiftly and elegantly.
-            </p>
-        </div>
-    </div>
+    </details>
 </section>
 
 <section data-color="oxygen" id="oxygen">
-    <div class="container">
-        <div class="row">
-            <i class="fa-regular fa-window-maximize icon icon-oxygen"></i>
-            <h2 class="project-title oxygen textbg">Oxygen</h2>
-        </div>
-        <p class="project-desc">
-            GUI-based admin console for debugging and testing while your code runs.
-        </p>
-        <div class="buttons">
-            <a href="https://github.com/Wednesware/Oxygen" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
-        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="oxygen textbg">oxygen</span></code></pre>
-        <div class="divider"></div>
-        <div class="feature-row">
-            <i class="fa-solid fa-feather-pointed feature-icon icon-oxygen"></i>
-            <h2 class="feature-title oxygen textbg">Tkinter-based</h2>
-            <p class="feature-desc">
-                Fast, cross-platform control panel.
+    <details>
+        <summary>
+            <div class="row">
+                <i class="fa-solid fa-fire icon oxygen"></i>
+                <h2 class="project-title oxygen textbg">Oxygen</h2>
+            </div>
+            <p class="project-desc">
+                Smooth console animations, dynamic color gradients and formatted text panels.
             </p>
-        </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-bars-progress feature-icon icon-oxygen"></i>
-            <h2 class="feature-title oxygen textbg">Versatile tooling</h2>
-            <p class="feature-desc">
-                Perfect for quick debug checks and long runtime scans.
+            <p class="cte-prompt">
+                Click to expand
             </p>
+        </summary>
+
+        <div class="container">
+            <div class="buttons">
+                <a href="https://github.com/Wednesware/Oxygen" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+
+            <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="oxygen textbg">oxygen</span></code></pre>
+
+            <div class="divider"></div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-person-running feature-icon oxygen"></i>
+                <h2 class="feature-title oxygen textbg">Animations</h2>
+                <p class="feature-desc">
+                    Easy and customizable console-based text animations with fades, pulses, etc. 
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-paint-roller feature-icon oxygen"></i>
+                <h2 class="feature-title oxygen textbg">Gradients</h2>
+                <p class="feature-desc">
+                    Create fading gradients for your text to make it pop.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-wand-sparkles feature-icon oxygen"></i>
+                <h2 class="feature-title oxygen textbg">Panels</h2>
+                <p class="feature-desc">
+                    Fully customizable panels to print directly in the terminal or use in <span class="magnesium textbg">Magnesium</span>'s 2D lists.
+                </p>
+            </div>
         </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-wand-sparkles feature-icon icon-oxygen"></i>
-            <h2 class="feature-title oxygen textbg">Squeaky clean!</h2>
-            <p class="feature-desc">
-                No ads, distractions or useless features. Built for speed and performance.
-            </p>
-        </div>
-    </div>
+    </details>
 </section>
 
 <section data-color="lithium" id="lithium">
-    <div class="container">
-        <div class="row">
-            <i class="fa-regular fa-window-maximize icon icon-lithium"></i>
-            <h2 class="project-title lithium textbg">Lithium</h2>
-        </div>
-        <p class="project-desc">
-            GUI-based admin console for debugging and testing while your code runs.
-        </p>
-        <div class="buttons">
-            <a href="https://github.com/Wednesware/Lithium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
-        <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="lithium textbg">lithium</span></code></pre>
-        <div class="divider"></div>
-        <div class="feature-row">
-            <i class="fa-solid fa-feather-pointed feature-icon icon-lithium"></i>
-            <h2 class="feature-title lithium textbg">Tkinter-based</h2>
-            <p class="feature-desc">
-                Fast, cross-platform control panel.
+    <details>
+        <summary>
+            <div class="row">
+                <i class="fa-regular fa-window-maximize icon lithium"></i>
+                <h2 class="project-title lithium textbg">Lithium</h2>
+            </div>
+            <p class="project-desc">
+                GUI-based admin console for debugging and testing while your code runs.
             </p>
-        </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-bars-progress feature-icon icon-lithium"></i>
-            <h2 class="feature-title lithium textbg">Versatile tooling</h2>
-            <p class="feature-desc">
-                Perfect for quick debug checks and long runtime scans.
+            <p class="cte-prompt">
+                Click to expand
             </p>
+        </summary>
+
+        <div class="container">
+            <div class="buttons">
+                <a href="https://github.com/Wednesware/Lithium" class="btn btn-primary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+
+            <pre><code class="code cc"><span class="nitrogen textbg"><b>n2</b></span> get <span class="lithium textbg">lithium</span></code></pre>
+
+            <div class="divider"></div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-feather-pointed feature-icon lithium"></i>
+                <h2 class="feature-title lithium textbg">Tkinter-based</h2>
+                <p class="feature-desc">
+                    Fast, cross-platform control panel.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-bars-progress feature-icon lithium"></i>
+                <h2 class="feature-title lithium textbg">Versatile tooling</h2>
+                <p class="feature-desc">
+                    Perfect for quick debug checks and long runtime scans.
+                </p>
+            </div>
+
+            <div class="feature-row">
+                <i class="fa-solid fa-wand-sparkles feature-icon lithium"></i>
+                <h2 class="feature-title lithium textbg">Squeaky clean!</h2>
+                <p class="feature-desc">
+                    No ads, distractions or useless features. Built for speed and performance.
+                </p>
+            </div>
         </div>
-        <div class="feature-row">
-            <i class="fa-solid fa-wand-sparkles feature-icon icon-lithium"></i>
-            <h2 class="feature-title lithium textbg">Squeaky clean!</h2>
-            <p class="feature-desc">
-                No ads, distractions or useless features. Built for speed and performance.
-            </p>
-        </div>
-    </div>
+    </details>
 </section>
 
 <footer>
