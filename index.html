@@ -485,13 +485,26 @@ section {
     display: inline-block;
     font-size: clamp(1.35rem, 2.5vw, 1.75rem);
     color: white;
-    background-color: #aa4444;
+    background-color: #ff8800;
     box-shadow: 0 4px 15px #aa4444;
     border-radius: 8px;
     padding: 0.25em 0.75em;
     transform: translateY(-60px);
     background-size: 300% 300%;
-    /* <p class="unrel">UNRELEASED</p> */
+    /* <span class="unrel">WIP</span> */
+}
+
+.unrel-il {
+    display: inline-block;
+    font-size: 0.9em;
+    margin-left: 4px;
+    padding: 0px 4px 0px 4px;
+    color: white;
+    background-color: #ff8800;
+    box-shadow: 0 4px 15px #aa4444;
+    border-radius: 8px;
+    background-size: 300% 300%;
+    /* <span class="unrel-il">WIP</span> */
 }
 
 .black {
@@ -585,8 +598,8 @@ footer {
     <a class="nitrogen-nav" href="#nitrogen">Nitrogen</a>
     <a class="magnesium-nav" href="#magnesium">Magnesium</a>
     <a class="helium-nav" href="#helium">Helium</a>
-    <a class="sodium-nav" href="#sodium">Sodium</a>
-    <a class="krypton-nav" href="#krypton">Krypton</a>
+    <a class="sodium-nav" href="#sodium">Sodium <span class="unrel-il">WIP</p></a>
+    <a class="krypton-nav" href="#krypton">Krypton <span class="unrel-il">WIP</span></a>
     <a class="oxygen-nav" href="#oxygen">Oxygen</a>
     <!--<a class="lithium-nav" href="#lithium">Lithium</a>-->
 </nav>
@@ -691,9 +704,9 @@ footer {
 
             <div class="feature-row">
                 <i class="fa-solid fa-gear feature-icon magnesium"></i>
-                <h2 class="feature-title magnesium textbg">Handle & Config</h2>
+                <h2 class="feature-title magnesium textbg">Handle, Config and Paths</h2>
                 <p class="feature-desc">
-                    Simplify application setup with PYON-based configuration and automatic exception handling through decorators.
+                    Simplify application setup with PYON-based configuration, automatic exception handling through decorators and easy file/path management.
                 </p>
             </div>
 
@@ -765,6 +778,7 @@ footer {
             <div class="row">
                 <i class="fa-solid fa-plug icon sodium"></i>
                 <h2 class="project-title sodium textbg">Sodium</h2>
+                <span class="unrel">WIP</span>
             </div>
             <p class="project-desc">
                 Get official and community-made plugins and extensions to expand your publications.
@@ -816,6 +830,7 @@ footer {
             <div class="row">
                 <i class="fa-solid fa-file-shield icon krypton"></i>
                 <h2 class="project-title krypton textbg">Krypton</h2>
+                <span class="unrel">WIP</span>
             </div>
             <p class="project-desc">
                 Encrypt, encode, and compress files using methods such as XOR, Base64 encoding, and Zstandard compression.
@@ -869,7 +884,7 @@ footer {
                 <h2 class="project-title oxygen textbg">Oxygen</h2>
             </div>
             <p class="project-desc">
-                Smooth console animations, dynamic color gradients and formatted text panels.
+                Smooth console animations, dynamic color gradients, formatted text panels and terminal control.
             </p>
             <p class="cte-prompt">
                 Click to expand
@@ -903,9 +918,9 @@ footer {
 
             <div class="feature-row">
                 <i class="fa-solid fa-wand-sparkles feature-icon oxygen"></i>
-                <h2 class="feature-title oxygen textbg">Panels</h2>
+                <h2 class="feature-title oxygen textbg">Panels and terminal control</h2>
                 <p class="feature-desc">
-                    Fully customizable panels to print directly in the terminal or use in <span class="magnesium textbg">Magnesium</span>'s 2D lists.
+                    Customizable panels and tools to move around the terminal and output content.
                 </p>
             </div>
         </div>
